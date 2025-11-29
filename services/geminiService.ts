@@ -1,11 +1,11 @@
-import { GoogleGenAI, Type, Schema } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 import { GeneratedContent, GenerationSettings } from "../types";
 
 // Initialize Gemini Client
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 // Define the response schema strictly using the Type enum as per guidelines
-const responseSchema: Schema = {
+const responseSchema = {
   type: Type.OBJECT,
   properties: {
     topic: { type: Type.STRING, description: "The main topic of the content" },
